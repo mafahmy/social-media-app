@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
 import { useHistory } from "react-router-dom";
-import { Dropdown, } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 
 const Login = () => {
   const users = useSelector((state) => state.users);
@@ -28,7 +28,6 @@ const Login = () => {
 
   return (
     <div>
-    
       <div className="container">
         <p>Welcome to Would You Rather App </p>
       </div>
@@ -36,7 +35,6 @@ const Login = () => {
         <h1>Please Sign in to Continue</h1>
       </div>
       <div className="container-drop">
-      
         <Dropdown
           placeholder="Select user"
           fluid
@@ -53,9 +51,7 @@ const Login = () => {
           LOGIN
         </button>
       </div>
-      
     </div>
-    
   );
 };
 export default Login;

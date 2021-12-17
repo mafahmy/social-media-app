@@ -31,11 +31,6 @@ const NewQuestion = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const question = {
-    //   optionOne,
-    //   optionTwo,
-    //   authedUser,
-    // };
     dispatch(handleSaveQuestion(optionOne, optionTwo, authedUser.value));
     console.log(optionTwo, authedUser.value);
 
@@ -52,40 +47,46 @@ const NewQuestion = (props) => {
     <div className="new-question">
       <Grid centered columns={2}>
         <GridColumn>
-        <Card fluid  >
-        <Card.Content>
-         <h1><Card.Header  textAlign="center" > Create new question </Card.Header> </h1>
-          <form>
-            <h2>Would you rather</h2>
-            <label htmlFor="optionOne">
-              <input
-                type="text"
-                placeholder="flower"
-                name="optionOne"
-                id="optionOne"
-                onChange={handleChange}
-                value={options.optionOne}
-              ></input>
-            </label>
-            <Divider horizontal>Or</Divider>
-            <label htmlFor="optionTwo">
-              <input
-                type="text"
-                placeholder="butterfly"
-                name="optionTwo"
-                id="optionTwo"
-                onChange={handleChange}
-                value={options.optionTwo}
-              ></input>
-            </label>
-            <button className="login-button"
-              onClick={handleSubmit}
-              disabled={optionOne === "" || optionTwo === ""}
-            >
-              SUBMIT
-            </button>
-          </form>
-          </Card.Content>
+          <Card fluid>
+            <Card.Content>
+              <h1>
+                <Card.Header textAlign="center">
+                  {" "}
+                  Create new question{" "}
+                </Card.Header>{" "}
+              </h1>
+              <form>
+                <h2>Would you rather</h2>
+                <label htmlFor="optionOne">
+                  <input
+                    type="text"
+                    placeholder="flower"
+                    name="optionOne"
+                    id="optionOne"
+                    onChange={handleChange}
+                    value={options.optionOne}
+                  ></input>
+                </label>
+                <Divider horizontal>Or</Divider>
+                <label htmlFor="optionTwo">
+                  <input
+                    type="text"
+                    placeholder="butterfly"
+                    name="optionTwo"
+                    id="optionTwo"
+                    onChange={handleChange}
+                    value={options.optionTwo}
+                  ></input>
+                </label>
+                <button
+                  className="login-button"
+                  onClick={handleSubmit}
+                  disabled={optionOne === "" || optionTwo === ""}
+                >
+                  SUBMIT
+                </button>
+              </form>
+            </Card.Content>
           </Card>
         </GridColumn>
       </Grid>
